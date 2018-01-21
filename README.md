@@ -1,8 +1,8 @@
 # ValianzScoreBoardBackEnd
-##API
+## API
 
-###Request Data
-####Endpoint
+### Request Data
+#### Endpoint
   http://host:9393/api/requestData
    Request: {"requestType":[int],"teamID":[int]}
    Method:POST
@@ -14,8 +14,8 @@
       default user: user 
       defalt password:password
    
-###Update Data
-####Endpoint
+### Update Data
+#### Endpoint
   http://host:9393/api/updateData - For updating data
     Request: {"requestType":[int],"teamID":[int],"gameID":[int],"score":[float]}
     Method:POST
