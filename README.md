@@ -16,7 +16,7 @@
    
 ### Update Data
 #### Endpoint
-  http://host:9393/api/updateData - For updating data
+  http://host:9393/api/updateData
     * Request: {"requestType":[int],"teamID":[int],"gameID":[int],"score":[float]}
     * Method:POST
     * requestType:1 = Insert new game score
