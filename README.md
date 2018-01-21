@@ -11,8 +11,8 @@
    * requestType:3 = Get all data about games
    
    *Should send basic auth information in the header.*
-      *default user: user 
-      *defalt password:password
+      * default user: user 
+      * defalt password:password
    
 ### Update Data
 #### Endpoint
@@ -23,5 +23,5 @@
     * requestType:2 = Update game score
     
     *Should send auth information in the header*
-      Roles allowed: ROLE_ADMIN
+      * Roles allowed: ROLE_ADMIN
     
