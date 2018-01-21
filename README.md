@@ -21,7 +21,8 @@
     * Method:POST
     * requestType:1 = Insert new game score
     * requestType:2 = Update game score
-    
-    *Should send auth information in the header*
-      * Roles allowed: ROLE_ADMIN
+   
+   *Should send auth information in the header.*
+      *Roles Allowed: ROLE_ADMIN
+
     
