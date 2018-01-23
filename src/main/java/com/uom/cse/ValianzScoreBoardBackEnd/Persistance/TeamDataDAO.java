@@ -26,7 +26,7 @@ public class TeamDataDAO {
         Collection queryData = dataSourceManager.getJdbcTemplate().query(
                 allTeamInfoQuery,
                 (rs, rowNum) -> new TeamInfoBean(rs.getInt("team_id"),
-                        rs.getString("team_name"), rs.getFloat("team_score"))
+                        rs.getString("team_name"), rs.getFloat("team_score"),rs.getString("team_color"))
         );
         teamInfoBeanList.addAll(queryData);
         for(TeamInfoBean teamInfoBean:teamInfoBeanList){
@@ -39,7 +39,7 @@ public class TeamDataDAO {
         Collection queryData = dataSourceManager.getJdbcTemplate().query(
                 selectedTeamInfoQuery,new Object[] {team_id} ,
                 (rs, rowNum) -> new TeamInfoBean(rs.getInt("team_id"),
-                        rs.getString("team_name"), rs.getFloat("team_score"))
+                        rs.getString("team_name"), rs.getFloat("team_score"),rs.getString("team_color"))
         );
         TeamInfoBean teamInfoBean = (TeamInfoBean) queryData.toArray()[0];
         teamInfoBean.setGameScores(extractGameInfo(team_id));

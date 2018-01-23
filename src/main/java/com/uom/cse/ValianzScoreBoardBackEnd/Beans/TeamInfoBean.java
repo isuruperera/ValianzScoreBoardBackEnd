@@ -6,12 +6,14 @@ public class TeamInfoBean {
     private int teamID;
     private String teamName;
     private float teamScore;
+    private String teamColor;
     private List<GameInfoBean> gameScores;
 
-    public TeamInfoBean(int teamID,String teamName, float teamScore){
+    public TeamInfoBean(int teamID,String teamName, float teamScore,String teamColor){
         this.setTeamID(teamID);
         this.setTeamName(teamName);
         this.setTeamScore(teamScore);
+        this.setTeamColor(teamColor);
     }
 
     public TeamInfoBean(){ }
@@ -46,5 +48,13 @@ public class TeamInfoBean {
 
     public void setGameScores(List<GameInfoBean> gameScores) {
         this.gameScores = gameScores;
+    }
+
+    public String getTeamColor() {
+        return teamColor;
+    }
+
+    public void setTeamColor(String teamColor) {
+        this.teamColor = teamColor;
     }
 }
