@@ -26,5 +26,15 @@
    
    *Should send auth information in the header.*
       *Roles Allowed: ROLE_ADMIN
+      
+### Auth
+#### Endpoint 
+  http://host:9393/api/auth/user  
+  * default user: user 
+  * defalt password:password     
 
+  http://host:9393/api/auth/user  
+   * default user: valianz 
+   * defalt password:*******
+   *Roles Allowed: ROLE_ADMIN,ROLE_USER  
     
