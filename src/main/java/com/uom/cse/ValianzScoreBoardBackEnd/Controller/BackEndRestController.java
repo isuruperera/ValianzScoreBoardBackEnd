@@ -34,9 +34,16 @@ public class BackEndRestController {
     }
 
     @CrossOrigin()
-    @RequestMapping(value="/version",method= RequestMethod.GET)
+    @RequestMapping(value="/auth/user",method= RequestMethod.GET)
     public String version(){
-        return "version-1.0";
+        return "SUCCESS";
+    }
+
+    @CrossOrigin()
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    @RequestMapping(value="/auth/admin",method= RequestMethod.GET)
+    public String versionAdmin(){
+        return "SUCCESS";
     }
 
     @CrossOrigin()

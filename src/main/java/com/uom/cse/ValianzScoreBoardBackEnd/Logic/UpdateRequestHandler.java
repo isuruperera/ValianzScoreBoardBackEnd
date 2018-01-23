@@ -11,10 +11,14 @@ public class UpdateRequestHandler {
     @Autowired
     private UpdaterDAO updaterDAO;
 
+    @Autowired
+    private GameWeight gameWeight;
+
     public BaseResponse handleNewRecord(ScoreUpdateRequestBean requestBean){
         BaseResponse response = new BaseResponse();
         try{
             updaterDAO.addNewRecord(requestBean.getTeamID(),requestBean.getGameID(),requestBean.getScore());
+            gameWeight.calculate(requestBean.getTeamID(),requestBean.getGameID(),requestBean.getScore());
             response.setStatus("SUCCESS");
         }catch (Exception e){
             response.setStatus("FAILED: "+e.getMessage());
@@ -26,6 +30,7 @@ public class UpdateRequestHandler {
         BaseResponse response = new BaseResponse();
         try{
             updaterDAO.updateRecord(requestBean.getTeamID(),requestBean.getGameID(),requestBean.getScore());
+            gameWeight.calculate(requestBean.getTeamID(),requestBean.getGameID(),requestBean.getScore());
             response.setStatus("SUCCESS");
         }catch (Exception e){
             response.setStatus("FAILED: "+e.getMessage());
