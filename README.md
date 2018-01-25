@@ -3,7 +3,7 @@
 
 ### Request Data
 #### Endpoint
-  http://host:9393/api/requestData
+  http://host:8080/api/requestData
   
    * Request: {"requestType":[int],"teamID":[int]}
    * Method:POST
@@ -17,7 +17,7 @@
    
 ### Update Data
 #### Endpoint
-  http://host:9393/api/updateData
+  http://host:8080/api/updateData
   
    * Request: {"requestType":[int],"teamID":[int],"gameID":[int],"score":[float]}
    * Method:POST
@@ -29,7 +29,7 @@
       
 ### Auth
 #### Endpoint 
-  http://host:9393/api/auth/user  
+  http://host:8080/api/auth/user  
   * default user: user 
   * defalt password:password     
 
