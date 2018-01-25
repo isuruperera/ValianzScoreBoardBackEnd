@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public class ScoreBoardRequestBean {
     private int requestType;
     private int teamID;
+    private int gameID;
 
     public int getRequestType() {
         return requestType;
@@ -31,5 +32,13 @@ public class ScoreBoardRequestBean {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getGameID() {
+        return gameID;
+    }
+
+    public void setGameID(int gameID) {
+        this.gameID = gameID;
     }
 }

@@ -36,14 +36,20 @@ public class BackEndRestController {
     @CrossOrigin()
     @RequestMapping(value="/auth/user",method= RequestMethod.GET)
     public String version(){
-        return "SUCCESS";
+        return "{SUCCESS}";
+    }
+
+    @CrossOrigin()
+    @RequestMapping(value="/options",method= RequestMethod.OPTIONS)
+    public String options(){
+        return "{SUCCESS}";
     }
 
     @CrossOrigin()
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @RequestMapping(value="/auth/admin",method= RequestMethod.GET)
     public String versionAdmin(){
-        return "SUCCESS";
+        return "{SUCCESS}";
     }
 
     @CrossOrigin()
@@ -54,4 +60,8 @@ public class BackEndRestController {
         BaseResponse response = scoreUpdaterService.requestData(scoreUpdateRequest);
         return JSONHandler.parseToJSON(response);
     }
+
+
+
+
 }
