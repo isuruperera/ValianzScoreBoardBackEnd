@@ -50,10 +50,14 @@ public class GameWeight {
             for (Map.Entry<Integer, Float> scoreEntry : gameScores.get(gameID).entrySet()) {
                 int teamID = scoreEntry.getKey();
                 float gameScore = scoreEntry.getValue();
-                float z = (gameScore - scoreStatistic.mean) / scoreStatistic.stDev;
+                float z;
+                if(scoreStatistic.stDev == 0)
+                    z = 0.0f;
+                else
+                    z = (gameScore - scoreStatistic.mean) / scoreStatistic.stDev;
                 float mappedScore = mapRange(z);
                 if (!totalTeamScores.containsKey(teamID)) {
-                    totalTeamScores.put(teamID, 0f);
+                    totalTeamScores.put(teamID, 0.0f);
                 }
                 totalTeamScores.put(teamID, totalTeamScores.get(teamID) + mappedScore);
             }
