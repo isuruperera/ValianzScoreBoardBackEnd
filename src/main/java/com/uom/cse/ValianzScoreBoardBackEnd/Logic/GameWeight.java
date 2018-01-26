@@ -61,11 +61,11 @@ public class GameWeight {
                 }
                 totalTeamScores.put(teamID, totalTeamScores.get(teamID) + mappedScore);
             }
-
-            // Updating all team scores
-            for (Map.Entry<Integer, Float> scoreEntry : totalTeamScores.entrySet()) {
-                updateTotalTeamScore(scoreEntry.getKey(), scoreEntry.getValue());
-            }
+        }
+        
+        // Updating all team scores
+        for (Map.Entry<Integer, Float> scoreEntry : totalTeamScores.entrySet()) {
+            updateTotalTeamScore(scoreEntry.getKey(), scoreEntry.getValue());
         }
     }
 
