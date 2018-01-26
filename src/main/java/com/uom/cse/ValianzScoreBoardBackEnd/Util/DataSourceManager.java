@@ -11,8 +11,8 @@ import javax.sql.DataSource;
 public class DataSourceManager {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String JDBC_URL = "jdbc:mysql://localhost/valianz";
-    private static final String USERNAME = "valianz";
-    private static final String PASSWORD = "v@lianz4Dmin";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "";
     private JdbcTemplate jdbcTemplate;
 
     @PostConstruct

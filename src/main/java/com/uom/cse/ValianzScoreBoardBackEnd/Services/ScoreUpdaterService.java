@@ -12,7 +12,7 @@ public class ScoreUpdaterService {
     @Autowired
     private UpdateRequestHandler updateRequestHandler;
 
-    public BaseResponse requestData(ScoreUpdateRequestBean requestBean){
+    public BaseResponse updateData(ScoreUpdateRequestBean requestBean){
         switch (requestBean.getRequestType()){
             case 1:
                 return handleNewEntryRequest(requestBean);

@@ -12,8 +12,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.RolesAllowed;
-
 @Service
 @RestController
 @RequestMapping(value="/api")
@@ -26,7 +24,7 @@ public class BackEndRestController {
     private ScoreUpdaterService scoreUpdaterService;
 
     @CrossOrigin()
-    @RequestMapping(value="/requestData",method= RequestMethod.POST)
+    @RequestMapping(value="/updateData",method= RequestMethod.POST)
     public String requestData(@RequestBody String data) throws Exception {
         ScoreBoardRequestBean scoreBoardRequest = JSONHandler.parseFromJSON(data,ScoreBoardRequestBean.class);
         BaseResponse response = scoreRequestService.requestData(scoreBoardRequest);
@@ -57,7 +55,7 @@ public class BackEndRestController {
     @RequestMapping(value="/updateData",method= RequestMethod.POST)
     public String updateData(@RequestBody String data) throws Exception {
         ScoreUpdateRequestBean scoreUpdateRequest = JSONHandler.parseFromJSON(data,ScoreUpdateRequestBean.class);
-        BaseResponse response = scoreUpdaterService.requestData(scoreUpdateRequest);
+        BaseResponse response = scoreUpdaterService.updateData(scoreUpdateRequest);
         return JSONHandler.parseToJSON(response);
     }
 
