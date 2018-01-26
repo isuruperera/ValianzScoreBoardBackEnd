@@ -24,7 +24,7 @@ public class BackEndRestController {
     private ScoreUpdaterService scoreUpdaterService;
 
     @CrossOrigin()
-    @RequestMapping(value="/updateData",method= RequestMethod.POST)
+    @RequestMapping(value="/requestData",method= RequestMethod.POST)
     public String requestData(@RequestBody String data) throws Exception {
         ScoreBoardRequestBean scoreBoardRequest = JSONHandler.parseFromJSON(data,ScoreBoardRequestBean.class);
         BaseResponse response = scoreRequestService.requestData(scoreBoardRequest);

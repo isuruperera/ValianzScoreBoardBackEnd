@@ -4,6 +4,7 @@ import com.uom.cse.ValianzScoreBoardBackEnd.Beans.GameInfoBean;
 import com.uom.cse.ValianzScoreBoardBackEnd.Beans.TeamInfoBean;
 import com.uom.cse.ValianzScoreBoardBackEnd.Persistance.TeamDataDAO;
 import com.uom.cse.ValianzScoreBoardBackEnd.Persistance.UpdaterDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -17,13 +18,19 @@ public class GameWeight {
     private final float out_min = 0f;
     private final float out_max = 200f;
 
+    @Autowired
+    private TeamDataDAO teamDataDAO;
+
+    @Autowired
+    private UpdaterDAO updaterDAO;
+
     public void calculate(int teamID, int gameID, float score) {
 //        new UpdaterDAO().addNewRecord(teamID, gameID, score);
         updateAllTeamScores();
     }
 
     private void updateAllTeamScores() {
-        List<TeamInfoBean> teamInfos = new TeamDataDAO().getTeamInformation();
+        List<TeamInfoBean> teamInfos = teamDataDAO.getTeamInformation();
         HashMap<Integer, HashMap<Integer, Float>> gameScores = new HashMap<>(); // game id -> team id -> game score;
         HashMap<Integer, Float> totalTeamScores = new HashMap<>(); // team id -> total score
 
@@ -59,7 +66,7 @@ public class GameWeight {
     }
 
     private void updateTotalTeamScore(int teamID, float score) {
-        new UpdaterDAO().updateTotalTeamScore(teamID, score);
+        updaterDAO.updateTotalTeamScore(teamID, score);
     }
 
     private ScoreStatistic calculateMeanAndStDev(Collection<Float> scores) {
